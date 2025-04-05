@@ -1,4 +1,4 @@
-# script written by weuritz8u
+# script written by Shadowdara
 
 import subprocess
 
