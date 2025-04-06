@@ -53,8 +53,7 @@ try:
 except:
     pass
 
-if vdo_print:
-    do_print("\nTerminal Output is set to true!")
+do_print("\nTerminal Output is set to true!")
 
 try:
     sys.argv[2]
