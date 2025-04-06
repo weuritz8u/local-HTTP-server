@@ -1,21 +1,17 @@
 # script written by Shadowdara
 
+import os
 import subprocess
 
 # vars
 script_path = 'addons/create_http_server.py'
-folder_path = '$$0'
+path = os.path.join(os.path.dirname(os.path.abspath(__file__)), script_path)
 
 # run on execution
 print("starting local HTTP Server by Shadowdara\n")
 
-port = input("Type your fav port [or just hit enter]: ")
-
-if port == '':
-    port = 8000
-
 try:
-    subprocess.run(['python', script_path, "0", folder_path, str(port)])
+    subprocess.run(['python', path])
 
 except:
     print("\nError\nCould not start the server")
