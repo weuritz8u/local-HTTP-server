@@ -7,7 +7,7 @@ script_path = 'addons/create_http_server.py'
 folder_path = '$$0'
 
 # run on execution
-print("starting local HTTP Server by weuritz8u\n")
+print("starting local HTTP Server by Shadowdara\n")
 
 port = input("Type your fav port [or just hit enter]: ")
 
