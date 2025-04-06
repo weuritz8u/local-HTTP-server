@@ -34,7 +34,7 @@ def start_server(PORT):
         do_print("\nhttps://github.com/ShadowDara/Easy-Scripts\nthe source repository with more information and guides\n")
         do_print(f"server path: {folder_path}\n")
         do_print(f"server runs on http://localhost:{PORT}\n")
-        do_print("Th Server runs forever now!\n")
+        do_print("The Server runs forever now!\n")
         httpd.serve_forever()
 
 # run on execution
@@ -59,11 +59,7 @@ try:
         raise NameError
 
     else:
-        try:
-            os.chdir(sys.argv[2])
-
-        except:
-            raise NameError
+        os.chdir(sys.argv[2])
 
 except:
     try:
@@ -80,7 +76,7 @@ do_print("\nSimple HTTP Server script by Shadowdara\n")
 try:
     sys.argv[3]
 
-    PORT = int(sys.argv[3])
+    PORT = sys.argv[3]
 
     start_server(PORT)
 
