@@ -59,7 +59,11 @@ try:
         raise NameError
 
     else:
-        os.chdir(sys.argv[2])
+        try:
+            os.chdir(sys.argv[2])
+
+        except:
+            raise NameError
 
 except:
     try:
