@@ -39,12 +39,7 @@ def start_server(PORT):
 
 # run on execution
 try:
-    sys.argv[1]
-
-    if not sys.argv[1].isdigit():
-        raise ValueError
-
-    argh_1 = sys.argv[1]
+    argh_1 = int(sys.argv[1])
 
     if sys.argv >= 1:
         argh_1 -= 1
@@ -57,14 +52,14 @@ do_print("\nTerminal Output is set to true!")
 
 try:
     sys.argv[2]
-    if sys.argv[2] == '\\':
+    if sys.argv[2] == '$$1':
         os.getcwd()
 
     elif sys.argv[2] == '$$0':
         raise NameError
 
     else:
-        os.chdir(sys.argv[1])
+        os.chdir(sys.argv[2])
 
 except:
     try:
