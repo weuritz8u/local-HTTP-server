@@ -11,8 +11,11 @@ print("starting local HTTP Server by Shadowdara\n")
 
 port = input("Type your fav port [or just hit enter]: ")
 
+if port == '':
+    port = 8000
+
 try:
-    subprocess.run(['python', script_path, "0", folder_path, port])
+    subprocess.run(['python', script_path, "0", folder_path, str(port)])
 
 except:
     print("\nError\nCould not start the server")

@@ -80,7 +80,9 @@ do_print("\nSimple HTTP Server script by Shadowdara\n")
 try:
     sys.argv[3]
 
-    start_server(sys.argv[3])
+    PORT = int(sys.argv[3])
+
+    start_server(PORT)
 
 except:
     do_print("Argv 3 not usable as Port!")
