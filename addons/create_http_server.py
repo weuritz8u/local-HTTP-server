@@ -41,7 +41,7 @@ def start_server(PORT):
 try:
     argh_1 = int(sys.argv[1])
 
-    if sys.argv >= 1:
+    if argh_1 >= 1:
         argh_1 -= 1
         vdo_print = False
 
