@@ -31,7 +31,7 @@ def start_server(PORT):
     Handler = http.server.SimpleHTTPRequestHandler
 
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        do_print("\nhttps://github.com/ShadowDara/Easy-Scripts\nthe source repository with more information and guides\n")
+        do_print("\nhttps://github.com/weuritz8u/local-HTTP-Server\nthe source repository with more information and guides\n")
         do_print(f"server path: {folder_path}\n")
         do_print(f"server runs on http://localhost:{PORT}\n")
         do_print("The Server runs forever now!\n")
@@ -51,32 +51,44 @@ except:
 do_print("\nTerminal Output is set to true!")
 
 try:
-    sys.argv[2]
-    if sys.argv[2] == '$$1':
-        os.getcwd()
+    if len(sys.argv) > 2:
+        if sys.argv[2] == '$$1':
+            folder_path = os.getcwd()
 
-    elif sys.argv[2] == '$$0':
-        raise NameError
+        elif sys.argv[2] == '$$0':
+            raise NameError
 
+        else:
+            try:
+                os.chdir(sys.argv[2])
+                folder_path = os.getcwd()
+
+            except:
+                do_print("Error: Could not switch to the directory!")
+                raise NameError
     else:
-        os.chdir(sys.argv[2])
+        raise NameError
 
 except:
     try:
         root = tk.Tk()
         root.withdraw()
         folder_path = filedialog.askdirectory(title="Select the root folder for the server!")
+
+        if not folder_path:
+            raise ValueError("Kein Verzeichnis ausgewählt!")
+
         os.chdir(folder_path)
-    except:
-        do_print("Could not select folder path!")
+
+    except Exception as e:
+        do_print(f"Fehler: {e}")
         sys.exit(8)
+
 
 do_print("\nSimple HTTP Server script by Shadowdara\n")
 
 try:
-    sys.argv[3]
-
-    PORT = sys.argv[3]
+    PORT = int(sys.argv[3])
 
     start_server(PORT)
 
@@ -93,9 +105,15 @@ except:
         else:
             break
 
+    if PORT > 49140:
+        do_print("Kein freier Port gefunden, Server kann nicht gestartet werden!")
+        sys.exit(1)
+
     try:
         start_server(PORT)
 
     except:
         do_print(f"Port {PORT} is busy")
         sys.exit(1)
+
+input()

@@ -1,7 +1,37 @@
 # local-HTTP-server
 
-easy create a local HTTP server with a python script
+## How to
 
-run `server_start.py` to start the server
+easy create a local HTTP server for debugging HTML Websites with a python script
 
-If you want to add for example to a terminal etc, just copy the python file in `addons` and execute it with the right arguments. More information about arguments, *[here](https://weuritz8u.github.io/guides/info/python_scripts.html#local_http_server) soon* 
+run `server_start.py` to start the server with python
+
+## Dev Info
+
+*These infos are only needed when you want to use the script anywhere else and run it directly without the `server_start.py`*
+
+**The Server will be started with 3 arguments**
+
+- argv[1]
+    - = `1` -> no text output in the terminal
+    - = `0` -> text output in the terminal
+
+- argv[2]
+    - = `$$0` -> select the folder in popup window
+    - = `$$1` -> use the `path` where the script is executed
+    - = *(any input)* -> try to use the input as folder path, when it dont work, must be selected via a popup window
+
+- argv[3]
+    - This is the used `PORT`, if the port doesn't work, the script will autmaticly search another one
+
+**when running the script without arguments**
+
+- argv[1] -> text output
+- argv[2] -> popup window
+- argv[3] -> `8000`
+
+## Contribute
+
+*feel free to contribute and fork this Repository*
+
+*LICENSE*: MIT
