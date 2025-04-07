@@ -28,7 +28,7 @@ run `server_start.py` to start the server with python
 
 - argv[1] -> text output in the terminal
 - argv[2] -> popup window to select the folder
-- argv[3] -> PORT = `8000`
+- argv[3] -> PORT = `8000`, but the script will search for another one when `8000` is busy
 
 ## Contribute
 
