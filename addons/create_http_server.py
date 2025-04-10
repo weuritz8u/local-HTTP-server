@@ -115,5 +115,3 @@ except:
     except:
         do_print(f"Port {PORT} is busy")
         sys.exit(1)
-
-input()
