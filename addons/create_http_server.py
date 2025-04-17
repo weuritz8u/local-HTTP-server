@@ -76,12 +76,12 @@ except:
         folder_path = filedialog.askdirectory(title="Select the root folder for the server!")
 
         if not folder_path:
-            raise ValueError("Kein Verzeichnis ausgewählt!")
+            raise ValueError("No Folder Selected!")
 
         os.chdir(folder_path)
 
     except Exception as e:
-        do_print(f"Fehler: {e}")
+        do_print(f"Error: {e}")
         sys.exit(8)
 
 
