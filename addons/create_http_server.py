@@ -106,7 +106,7 @@ except:
             break
 
     if PORT > 49140:
-        do_print("Kein freier Port gefunden, Server kann nicht gestartet werden!")
+        do_print("No usable Port found, Server could not start!")
         sys.exit(1)
 
     try:
